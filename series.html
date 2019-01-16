@@ -28,6 +28,11 @@
       <div class="vol-index" v-if="vol.subtitle">Vol {{ i + 1 }}</div>
       <div class="vol-subtitle">{{ vol.subtitle || `Vol ${i + 1}` }}</div>
 
+      <div class="row link" v-if="vol.bgm">
+        <i class="material-icons">live_tv</i>
+        <a :href="'https://bgm.tv/subject/' + vol.bgm">Bangumi: {{ vol.bgm }}</a>
+      </div>
+
       <div class="row link" v-if="vol.read">
         <i class="material-icons">library_books</i>
         <a :href="vol.read"><strong>Read:</strong> {{ vol.read }}</a>
