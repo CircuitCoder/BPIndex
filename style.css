@@ -69,6 +69,7 @@ body {
   font-size: 24px;
   font-family: serif;
   font-weight: bold;
+  margin-top: 10px;
 }
 
 .entry-modified {
@@ -87,6 +88,7 @@ body {
   margin-bottom: 20px;
   font-weight: bold;
   font-family: 'Source Serif Pro', serif;
+  margin-top: 20px;
 }
 
 .row.link {
