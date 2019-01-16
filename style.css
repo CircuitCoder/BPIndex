@@ -116,3 +116,7 @@ body {
   font-weight: bold;
   font-family: 'Source Serif Pro', serif;
 }
+
+body {
+  padding-bottom: 40px;
+}
