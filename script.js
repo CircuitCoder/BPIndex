@@ -1,3 +1,9 @@
+// Resolve 404 redirect
+if(window.location.hash.indexOf('#/') == 0) {
+  const pn = window.location.hash.substr(1);
+  window.history.replaceState(null, null, pn);
+}
+
 const DATE_FORMAT = 'YY-MM-DD HH:mm';
 
 function loadComp(uri, rest) {
