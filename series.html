@@ -30,7 +30,7 @@
 
       <div class="row link" v-if="vol.read">
         <i class="material-icons">library_books</i>
-        <a :href="vol.read"><strong>Read:</strong> {{ vol.dwn.epub }}</a>
+        <a :href="vol.read"><strong>Read:</strong> {{ vol.read }}</a>
       </div>
 
       <div class="row link" v-if="vol.dwn && vol.dwn.epub">
