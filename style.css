@@ -88,3 +88,31 @@ body {
   font-weight: bold;
   font-family: 'Source Serif Pro', serif;
 }
+
+.row.link {
+  font-size: 16px;
+  margin-top: 5px;
+}
+
+.row.link a {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  flex: 1;
+}
+
+.vol {
+  margin-top: 20px;
+}
+
+.vol-index {
+  color: rgba(0,0,0,.38);
+  font-size: 12px;
+  margin-bottom: 5px;
+}
+
+.vol-subtitle {
+  font-size: 24px;
+  font-weight: bold;
+  font-family: 'Source Serif Pro', serif;
+}

@@ -1,6 +1,6 @@
 <div>
   <router-link to="/" class="home row"><i class="material-icons">keyboard_arrow_left</i> Home</router-link>
-  <div v-if="content">
+  <div v-if="content && content !== 404">
     <div class="title">
       {{ content.title }}
     </div>
@@ -23,7 +23,33 @@
       <i class="material-icons">live_tv</i>
       <a :href="'https://bgm.tv/subject/' + content.bgm">Bangumi: {{ content.bgm }}</a>
     </div>
+
+    <div class="vol" v-for="(vol, i) of content.vols">
+      <div class="vol-index" v-if="vol.subtitle">Vol {{ i + 1 }}</div>
+      <div class="vol-subtitle">{{ vol.subtitle || `Vol ${i + 1}` }}</div>
+
+      <div class="row link" v-if="vol.read">
+        <i class="material-icons">library_books</i>
+        <a :href="vol.read"><strong>Read:</strong> {{ vol.dwn.epub }}</a>
+      </div>
+
+      <div class="row link" v-if="vol.dwn && vol.dwn.epub">
+        <i class="material-icons">get_app</i>
+        <a :href="vol.dwn.epub"><strong>ePub:</strong> {{ vol.dwn.epub }}</a>
+      </div>
+
+      <div class="row link" v-if="vol.dwn && vol.dwn.txt">
+        <i class="material-icons">get_app</i>
+        <a :href="vol.dwn.txt"><strong>txt:</strong> {{ vol.dwn.txt }}</a>
+      </div>
+    </div>
   </div>
 
-  <div v-if="!content" class="loading"></div>
+  <div v-if="content === 404">
+    <div class="title">Not found!</div>
+  </div>
+
+  <div v-if="!content" class="loading">
+    Loading...
+  </div>
 </div>

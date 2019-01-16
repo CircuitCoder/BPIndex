@@ -1,6 +1,8 @@
 <div>
   <div class="brand">BPIndex</div>
-  <div class="loading" v-if="list === null"></div>
+  <div v-if="!list" class="loading">
+    Loading...
+  </div>
   <div class="entries">
     <router-link class="entry" v-for="entry of list" :to="'/' + entry.name">
       <div class="entry-name">

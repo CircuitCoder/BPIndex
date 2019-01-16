@@ -32,7 +32,11 @@ const Series = loadComp('/series.html', {
       const resp = await fetch(`/desc/${name}.yml`);
       const yaml = await resp.text();
 
-      this.content = jsyaml.load(yaml);
+      const content = jsyaml.load(yaml);
+      if(typeof content !== 'string')
+        this.content = content;
+      else
+        this.content = 404;
     },
   },
 });
