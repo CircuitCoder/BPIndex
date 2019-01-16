@@ -42,13 +42,13 @@ function serializeMsg(content) {
     if(e.bgm)
       current += `Bangumi: [${e.bgm}](https://bgm.tv/subject/${e.bgm})\n`;
     if(e.read)
-      current += `Read: [${e.read}](https://bgm.tv/subject/${e.read})\n`;
+      current += `Read: [${e.read}](${e.read})\n`;
 
     if(e.dwn) {
       if(e.dwn.epub)
-        current += `ePub: [${e.dwn.epub}](https://bgm.tv/subject/${e.dwn.epub})\n`;
+        current += `ePub: [${e.dwn.epub}](${e.dwn.epub})\n`;
       if(e.dwn.txt)
-        current += `txt: [${e.dwn.txt}](https://bgm.tv/subject/${e.dwn.txt})\n`;
+        current += `txt: [${e.dwn.txt}](${e.dwn.txt})\n`;
     }
 
     text += '\n' + current;
