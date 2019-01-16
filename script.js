@@ -61,6 +61,8 @@ const Home = loadComp('/home.html', {
         modified: new Date(stat[k].mtime),
         name: k,
       }));
+
+      this.list.sort((a, b) => b.modified - a.modified);
     },
 
     formatDate(date) {
