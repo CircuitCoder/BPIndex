@@ -1,0 +1,13 @@
+<div>
+  <div class="loading" v-if="list === null"></div>
+  <div class="entries">
+    <router-link class="entry" v-for="entry of list" :to="'/' + entry.name">
+      <div class="entry-name">
+        {{ entry.name }}
+      </div>
+      <div class="entry-modified">
+        {{ formatDate(entry.modified) }}
+      </div>
+    </router-link>
+  </div>
+</div>

@@ -1,0 +1,46 @@
+.title {
+  font-size: 40px;
+  line-height: 48px;
+  font-family: serif;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.title-cn {
+  font-size: 20px;
+  line-height: 24px;
+  font-family: serif;
+  margin-bottom: 30px;
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  font-size: 24px;
+  color: rgba(0,0,0,.54);
+}
+
+.row .material-icons {
+  font-size: 20px;
+  margin-right: 10px;
+  color: rgba(0,0,0,.54);
+}
+
+a {
+  text-decoration: none;
+  color: rgba(0,0,0,.7);
+  transition: color .2s ease;
+}
+
+a:hover {
+  color: inherit;
+}
+
+.row a {
+  color: rgba(0,0,0,.54);
+}
+
+.row a:hover {
+  color: rgba(0,0,0,1);
+}
+}
