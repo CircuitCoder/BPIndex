@@ -22,6 +22,8 @@ const Series = loadComp('/series.html', {
 
   mounted() {
     this.reload();
+
+    document.title = `${this.$route.params.name} | BPIndex`;
   },
 
   methods: {
@@ -48,6 +50,8 @@ const Home = loadComp('/home.html', {
 
   mounted() {
     this.reloadList();
+
+    document.title = 'BPIndex';
   },
 
   methods: {
