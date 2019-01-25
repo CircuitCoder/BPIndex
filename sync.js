@@ -83,11 +83,28 @@ async function editMsg(channel, tgid, content) {
 }
 
 async function work() {
+  const reverseMap = {};
+
   for(const e of dir) {
     const fstat = fs.statSync(`desc/${e}`);
     const name = e.split('.yml').join('');
     const content = yaml.load(fs.readFileSync(`desc/${e}`).toString('utf-8'));
     const mtime = fstat.mtime.toISOString();
+
+    // Add to reverse mapping
+    if(content.bgm) {
+      reverseMap[content.bgm] = {
+        series: content.title,
+        index: -1, // Series
+      };
+
+      content.vols.forEach((vol, i) => {
+        if(vol.bgm) reverseMap[vol.bgm] = {
+          series: content.title,
+          index: i,
+        };
+      });
+    }
 
     if(!forceUpdate && stat[name] && stat[name].mtime === mtime) {
       console.log('Unchanged, continue');
@@ -110,6 +127,7 @@ async function work() {
   }
 
   fs.writeFileSync('./stat.json', JSON.stringify(stat));
+  fs.writeFileSync('./revMap.json', JSON.stringify(reverseMap));
 }
 
 work();
