@@ -2,6 +2,10 @@ const yaml = require('js-yaml');
 const Telegram = require('telegraf/telegram');
 const fs = require('fs');
 const PA = require('https-proxy-agent');
+const Utimes = require('@ronomon/utimes');
+const util = require('util');
+
+const utimes = util.promisify(Utimes.utimes);
 
 let stat;
 try {
@@ -75,10 +79,11 @@ async function editMsg(channel, tgid, content) {
       parse_mode: 'Markdown',
       disable_web_page_preview: true,
     });
+    return true;
   } catch(e) {
     if(forceUpdate)
-      return;
-    throw e;
+      return true;
+    return false;
   }
 }
 
@@ -89,7 +94,7 @@ async function work() {
     const fstat = fs.statSync(`desc/${e}`);
     const name = e.split('.yml').join('');
     const content = yaml.load(fs.readFileSync(`desc/${e}`).toString('utf-8'));
-    const mtime = fstat.mtime.toISOString();
+    let mtime = fstat.mtime.toISOString();
 
     // Add to reverse mapping
     if(content.bgm) {
@@ -117,7 +122,14 @@ async function work() {
       tgid = await sendMsg(channel, content);
     else {
       tgid = stat[name].tgid;
-      await editMsg(channel, tgid, content);
+      const updated = await editMsg(channel, tgid, content);
+      if(!updated) {
+        console.log('Mtime differs but content unchanged, restoring mtime');
+
+        let originalMtime = new Date(stat[name].mtime).getTime();
+        await utimes(`desc/${e}`, undefined, originalMtime, undefined);
+        continue;
+      }
     }
 
     stat[name] = {
