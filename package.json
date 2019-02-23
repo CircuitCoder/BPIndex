@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "@ronomon/utimes": "^2.3.1",
     "https-proxy-agent": "^2.2.1",
     "js-yaml": "^3.12.1",
     "telegraf": "^3.26.0"
