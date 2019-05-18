@@ -36,7 +36,7 @@ function serializeMsg(content) {
     `${content.titleCN}\n` +
     `\n` +
     `作者: *${content.author}*\n` +
-    `插画: *${content.illust}*\n` +
+    (content.illust ? `插画: *${content.illust}*\n` : '') +
     `\n` +
     `Bangumi: [${content.bgm}](https://bgm.tv/subject/${content.bgm})\n`;
 

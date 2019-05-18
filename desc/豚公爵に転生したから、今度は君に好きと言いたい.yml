@@ -10,7 +10,10 @@ vols:
     read: https://www.lightnovel.cn/thread-952473-1-2.html
   - bgm: 223856
     read: https://www.lightnovel.cn/thread-954527-1-2.html
-    subtitle: "Vol 2 (翻译中)"
+    dwn:
+      txt: https://www.lightnovel.cn/thread-964708-1-1.html
   - bgm: 223857
+    subtitle: "Vol 3 (翻译中)"
+    read: https://www.lightnovel.cn/thread-966931-1-1.html
   - bgm: 253991
   - bgm: 253992
