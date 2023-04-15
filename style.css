@@ -1,7 +1,14 @@
+body {
+  font-family: 'Source Sans Pro', 'Noto Sans SC', -apple-system,
+    BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell',
+    'Fira Sans', 'Droid Sans', 'Helvetica Neue', 'PingFang SC',
+    'Microsoft YaHei', /* Good luck Linux users */ sans-serif;
+}
+
 .title {
   font-size: 40px;
   line-height: 48px;
-  font-family: serif;
+  font-family: 'Source Serif Pro', 'Noto Serif SC', serif;
   margin-bottom: 10px;
   font-weight: bold;
 }
@@ -9,7 +16,7 @@
 .title-cn {
   font-size: 20px;
   line-height: 24px;
-  font-family: serif;
+  font-family: 'Source Serif Pro', 'Noto Serif SC', serif;
   margin-bottom: 30px;
 }
 
@@ -67,7 +74,7 @@ body {
 
 .entry-name {
   font-size: 24px;
-  font-family: serif;
+  font-family: 'Source Serif Pro', 'Noto Serif SC', serif;
   font-weight: bold;
   margin-top: 20px;
 }
@@ -87,7 +94,7 @@ body {
   line-height: 48px;
   margin-bottom: 20px;
   font-weight: bold;
-  font-family: 'Source Serif Pro', serif;
+  font-family: 'Source Serif Pro', 'Noto Serif SC', serif;
   margin-top: 20px;
 }
 
@@ -116,7 +123,7 @@ body {
 .vol-subtitle {
   font-size: 24px;
   font-weight: bold;
-  font-family: 'Source Serif Pro', serif;
+  font-family: 'Source Serif Pro', 'Noto Serif SC', serif;
 }
 
 body {
